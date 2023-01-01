@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1090885665494",
+    "project_id": "cropcare-app",
+    "storage_bucket": "cropcare-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090885665494:android:dac98b75d0300ccba9ff77",
+        "android_client_info": {
+          "package_name": "com.example.cropcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090885665494-ff4g8ko0vmbfc0dgti7jpk8ech7rkvq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk4jsrzAP79D9TcHAs7YzD5bK6hoX9DTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090885665494-ff4g8ko0vmbfc0dgti7jpk8ech7rkvq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
