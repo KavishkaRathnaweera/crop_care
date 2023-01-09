@@ -1,8 +1,10 @@
 
+import 'package:cropcare/Routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import "package:flutter/material.dart";
-import 'Screen/theme.dart';
+import 'Controllers/Bindings/auth_binding.dart';
+import 'theme.dart';
 
 class CropCareApp extends StatelessWidget {
   // const CropCare({Key? key}) : super(key: key) ;
@@ -15,10 +17,10 @@ class CropCareApp extends StatelessWidget {
     return GetMaterialApp(
       title: "CropCare",
       debugShowCheckedModeBanner: false,
-      // initialBinding: AuthBinding(),
+      initialBinding: AuthBinding(),
       theme: CropCareThemes.light,
       initialRoute: "/",
-      // getPages: GetPages.init(),
+      getPages: AppRouter.init(),
       defaultTransition: Transition.zoom,
     );
   }
