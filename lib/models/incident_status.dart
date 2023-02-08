@@ -1,0 +1,1 @@
+enum IncidentStatus { NEW, IN_PROGRESS, COMPLETED, REJECTED }
