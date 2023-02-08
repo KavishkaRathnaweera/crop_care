@@ -5,16 +5,16 @@ import "package:flutter/material.dart";
 import 'package:get/get.dart';
 import 'controllers/bindings/auth_binding.dart';
 
-class CropifyApp extends StatelessWidget {
+class CropCareApp extends StatelessWidget {
   // const CropifyApp({Key? key}) : super(key: key) ;
-  CropifyApp() {
+  CropCareApp() {
     PushNotificationService().initialise();
   }
 
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "Cropify",
+      title: "CropCare",
       debugShowCheckedModeBanner: false,
       initialBinding: AuthBinding(),
       theme: CropifyThemes.light,

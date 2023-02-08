@@ -20,7 +20,7 @@ class SplashScreen extends GetWidget<SplashController> {
             children: [
               Image.asset('assets/splash.gif', fit: BoxFit.cover),
               AnimatedTextKit(animatedTexts: [
-                TyperAnimatedText('Cropify',
+                TyperAnimatedText('CropCare',
                     textStyle: const TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
                         fontWeight: FontWeight.w500,
