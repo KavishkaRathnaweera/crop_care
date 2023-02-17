@@ -392,7 +392,7 @@ class IncidentInfo extends GetWidget<IncidentController> {
               },
               style: ElevatedButton.styleFrom(primary: Colors.green),
               child: const Text(
-                "Make Payment",
+                "Accept",
                 style: CropifyThemes.buttonTextTheme,
               ),
             )
@@ -451,7 +451,7 @@ class IncidentInfo extends GetWidget<IncidentController> {
               decoration: const InputDecoration(
                 contentPadding:
                     EdgeInsets.only(left: 15, bottom: 11, top: 11, right: 15),
-                hintText: "Leave a comment...",
+                hintText: "reason",
                 hintStyle: TextStyle(fontSize: 15),
               ),
             ),
