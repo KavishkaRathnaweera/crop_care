@@ -18,43 +18,26 @@ class OfficerAppBar extends GetWidget<AuthController>
         title: const Padding(
           padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
           child: Text(
-            'Cropify',
+            'CropCare',
             style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.w100,
                 fontSize: 25,
                 fontFamily: "Lobster",
-                shadows: [
-                  Shadow(
-                      // bottomLeft
-                      offset: Offset(-1.5, -1.5),
-                      color: Color.fromARGB(255, 75, 53, 45)),
-                  Shadow(
-                      // bottomRight
-                      offset: Offset(1.5, -1.5),
-                      color: Color.fromARGB(255, 75, 53, 45)),
-                  Shadow(
-                      // topRight
-                      offset: Offset(1.5, 1.5),
-                      color: Color.fromARGB(255, 75, 53, 45)),
-                  Shadow(
-                      // topLeft
-                      offset: Offset(-1.5, 1.5),
-                      color: Color.fromARGB(255, 75, 53, 45)),
-                ]),
+                ),
           ),
         ),
-        backgroundColor: const Color.fromARGB(255, 20, 9, 119),
+        backgroundColor: const Color.fromARGB(214, 254,194,1),
         actions: visible
             ? [
                 PopupMenuButton(
-                    icon: const Icon(Icons.menu),
+                    icon: const Icon(Icons.menu,color: Colors.black,),
                     color: Colors.white,
                     itemBuilder: (context) => [
                           PopupMenuItem(
                               child: TextButton(
                                   child: const Text(
-                                    "Sign Out",
+                                    "Log Out",
                                     style: TextStyle(
                                         color: Color.fromARGB(255, 80, 79, 79)),
                                   ),

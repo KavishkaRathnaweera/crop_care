@@ -14,7 +14,7 @@ class FarmerHomeRoot extends GetView<FarmerBottomNavController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CropifyAppBar(),
+      appBar: const CropCareAppBar(),
       body: Navigator(
         key: Get.nestedKey(1),
         initialRoute: 'farmerHome',
@@ -25,10 +25,6 @@ class FarmerHomeRoot extends GetView<FarmerBottomNavController> {
             type: BottomNavigationBarType.fixed,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
                 icon: Icon(Icons.search),
                 label: 'Log',
               ),
@@ -37,12 +33,20 @@ class FarmerHomeRoot extends GetView<FarmerBottomNavController> {
                 label: 'Complete',
               ),
               BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.new_label),
+                label: 'News',
+              ),
+              BottomNavigationBarItem(
                 icon: Icon(Icons.person),
                 label: 'Account',
               ),
             ],
             currentIndex: controller.currentIndex.value,
-            selectedItemColor: Colors.pink,
+            selectedItemColor: Colors.orangeAccent,
             onTap: controller.changePage,
           )),
     );

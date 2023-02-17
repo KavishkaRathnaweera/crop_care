@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 class FarmerHome extends StatelessWidget {
   const FarmerHome({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +16,7 @@ class FarmerHome extends StatelessWidget {
             alignment: Alignment.center,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/vegie-home.jpg"),
+                image: AssetImage("assets/crops.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -30,8 +31,12 @@ class FarmerHome extends StatelessWidget {
                 children: <Widget>[
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
+                        primary: Colors.green[900],
                         minimumSize: const Size.fromHeight(60),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(80.0),
+                        ),
+
                         elevation: 5),
                     onPressed: () {
                       Get.toNamed('/farmerReportIncident');
@@ -43,120 +48,12 @@ class FarmerHome extends StatelessWidget {
                         fontSize: 20,
                       ),
                     ),
+
                   ),
                   const SizedBox(
                     height: 30,
                   ),
-                  Expanded(
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        enableInfiniteScroll: true,
-                        scrollDirection: Axis.vertical,
-                        autoPlay: true,
-                        autoPlayInterval: const Duration(seconds: 15),
-                        autoPlayCurve: Curves.decelerate,
-                        viewportFraction: 1.0,
-                      ),
-                      items: adCarousal.map((i) {
-                        return Builder(
-                          builder: (BuildContext context) {
-                            return Container(
-                                width: MediaQuery.of(context).size.width,
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 5.0),
-                                decoration:
-                                    const BoxDecoration(color: Colors.amber),
-                                child: Card(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Row(
-                                      children: [
-                                        Expanded(
-                                          child: Container(
-                                            alignment: Alignment.center,
-                                            decoration: BoxDecoration(
-                                              image: DecorationImage(
-                                                image: i.image,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                            height: 250,
-                                            width: double.infinity,
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 10,
-                                        ),
-                                        // TODO: fix overflow on registration path
-                                        Expanded(
-                                            child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              children: const [
-                                                Text(
-                                                  "Ad",
-                                                  style: TextStyle(
-                                                    fontSize: 10,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            const SizedBox(
-                                              height: 10,
-                                            ),
-                                            Expanded(
-                                              child: Column(
-                                                children: [
-                                                  Text(
-                                                    i.title,
-                                                    style: const TextStyle(
-                                                      fontSize: 18,
-                                                      fontWeight:
-                                                          FontWeight.w500,
-                                                    ),
-                                                  ),
-                                                  const SizedBox(
-                                                    height: 15,
-                                                  ),
-                                                  Expanded(
-                                                    child: Text(
-                                                      i.description,
-                                                      overflow:
-                                                          TextOverflow.fade,
-                                                      maxLines: null,
-                                                      style: const TextStyle(
-                                                          fontSize: 12,
-                                                          fontWeight:
-                                                              FontWeight.w300,
-                                                          color: Color.fromARGB(
-                                                              255, 63, 62, 62)),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            ElevatedButton(
-                                              child: const Text("Read more..."),
-                                              onPressed: () {},
-                                            ),
-                                          ],
-                                        ))
-                                      ],
-                                    ),
-                                  ),
-                                ));
-                          },
-                        );
-                      }).toList(),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
+
                 ],
               ),
             ),

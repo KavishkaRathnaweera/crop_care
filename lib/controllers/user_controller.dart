@@ -70,19 +70,20 @@ class UserController extends GetxController {
     try {
       List<RegisteredFarmModel> registered =
           await Database().isFarmRegistered(regNum);
-      if (registered.isEmpty) {
+      if (!registered.isEmpty) {
         Get.snackbar("Error registering account",
             "Provided farm registration number is not government registered",
             snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
       } else {
         _registeredFarm.value = registered[0];
-        if (_registeredFarm.value.registered!) {
-          Get.snackbar(
-              "Error registering account", "Farm is already registered",
-              snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
-        } else {
-          return true;
-        }
+        return true;
+        // if (_registeredFarm.value.registered!) {
+        //   Get.snackbar(
+        //       "Error registering account", "Farm is already registered",
+        //       snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
+        // } else {
+        //   return true;
+        // }
       }
     } on FirebaseException catch (e) {
       Get.snackbar(

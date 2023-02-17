@@ -54,6 +54,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                   padding: const EdgeInsets.fromLTRB(
                                       10.0, 0.0, 0, 10.0),
                                   child: Card(
+                                    color: Colors.yellow[50],
                                     shadowColor:
                                         const Color.fromARGB(255, 37, 87, 39),
                                     elevation: 5,
@@ -96,6 +97,8 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                                   dividerColor:
                                                       Colors.transparent),
                                               child: ExpansionTile(
+                                                initiallyExpanded: true,
+                                                trailing: SizedBox.shrink(),
                                                 tilePadding: EdgeInsets.zero,
                                                 title: ElevatedButton(
                                                   style: ElevatedButton.styleFrom(

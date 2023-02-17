@@ -54,6 +54,7 @@ class CompleteIncident extends GetWidget<FarmerCompleteIncidentController> {
                                   padding: const EdgeInsets.fromLTRB(
                                       10.0, 0.0, 0, 10.0),
                                   child: Card(
+                                    color: Colors.yellow[50],
                                     shadowColor:
                                         const Color.fromARGB(255, 37, 87, 39),
                                     elevation: 5,
@@ -98,6 +99,8 @@ class CompleteIncident extends GetWidget<FarmerCompleteIncidentController> {
                                                   dividerColor:
                                                       Colors.transparent),
                                               child: ExpansionTile(
+                                                initiallyExpanded: true,
+                                                trailing: SizedBox.shrink(),
                                                 tilePadding: EdgeInsets.zero,
                                                 title: ElevatedButton(
                                                   style: ElevatedButton.styleFrom(

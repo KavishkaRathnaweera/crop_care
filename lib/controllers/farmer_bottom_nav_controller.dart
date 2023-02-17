@@ -1,5 +1,6 @@
 import 'package:cropcare/controllers/bindings/farmer_complete_incident_binding.dart';
 import 'package:cropcare/controllers/bindings/incident_log_binding.dart';
+import 'package:cropcare/screens/farmer/news.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,9 +13,10 @@ class FarmerBottomNavController extends GetxController {
   var currentIndex = 0.obs;
 
   final pages = <String>[
-    'farmerHome',
     'farmerIncidentLog',
     'farmerCompleteIncident',
+    'farmerHome',
+    'news',
     'farmerAccount'
   ];
 
@@ -51,6 +53,13 @@ class FarmerBottomNavController extends GetxController {
       return GetPageRoute(
           settings: settings,
           page: () => const FarmerAccount(),
+          transition: Transition.noTransition);
+    }
+
+    if (settings.name == 'news') {
+      return GetPageRoute(
+          settings: settings,
+          page: () => const News(),
           transition: Transition.noTransition);
     }
 

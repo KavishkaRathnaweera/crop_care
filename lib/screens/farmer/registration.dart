@@ -20,7 +20,7 @@ class FarmerRegistration extends GetWidget<UserController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CropifyAppBar(),
+      appBar: const CropCareAppBar(),
       body: Align(
         alignment: Alignment.center,
         child: SingleChildScrollView(
@@ -254,7 +254,7 @@ class FarmerRegistration extends GetWidget<UserController> {
                   } else {
                     if (await controller
                         .isFarmRegistered(regNumController.text)) {
-                        controller.registerUser(
+                      controller.registerUser(
                         nameController.text,
                         phoneController.text,
                         nicController.text,
@@ -265,6 +265,7 @@ class FarmerRegistration extends GetWidget<UserController> {
                         regNumController.text,
                       );
                     }
+
                     if (controller.isLoading.value) {
                       const Loading();
                     }

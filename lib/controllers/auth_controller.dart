@@ -44,7 +44,7 @@ class AuthController extends GetxController {
           email: email.trim(), password: password);
 
       String? fcmToken = await PushNotificationService().getFcmToken();
-
+      print(_authResult.user);
       //create user in database
       UserModel _user = UserModel(
           id: _authResult.user?.uid,
@@ -134,7 +134,8 @@ class AuthController extends GetxController {
     try {
       UserCredential _authResult = await _auth.signInWithEmailAndPassword(
           email: email.trim(), password: password);
-      Get.find<UserController>().user = await Database().getUser(_authResult.user?.uid);
+      Get.find<UserController>().user =
+          await Database().getUser(_authResult.user?.uid);
     } on FirebaseAuthException catch (e) {
       Get.snackbar(
         "Error signing in",

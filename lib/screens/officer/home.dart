@@ -39,71 +39,67 @@ class OfficerHome extends StatelessWidget {
                         if ((incidentController.incidents[index].status ==
                             IncidentStatus.NEW)) {
                           return Padding(
-                            padding:
-                                const EdgeInsets.fromLTRB(10.0, 0.0, 0, 10.0),
-                            child: Card(
-                              shadowColor:
-                                  const Color.fromARGB(255, 6, 118, 182),
-                              elevation: 5,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: <Widget>[
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text(
+                              padding:
+                                  const EdgeInsets.fromLTRB(10.0, 0.0, 0, 10.0),
+                              child: Card(
+                                  color: Colors.yellow[100],
+                                  shadowColor: Colors.blueGrey,
+                                  child: InkWell(
+                                onTap: () {
+                                  Get.toNamed("/IncidentInfo",
+                                      arguments:
+                                          incidentController.incidents[index]);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        ListTile(
+                                          leading: const Icon(Icons.album,
+                                              color: Colors.orange, size: 45),
+                                          title: Text(
                                             incidentController
                                                 .incidents[index].user!.name!,
-                                            style: CropifyThemes.mainTextTheme,
-                                          ),
-                                          Text(
-                                            incidentController
-                                                .incidents[index].date!
-                                                .toDate()
-                                                .toString()
-                                                .split(" ")
-                                                .first,
-                                            style: CropifyThemes.subTextTheme,
-                                          ),
-                                        ],
-                                      ),
-                                      Align(
-                                        alignment: Alignment.bottomLeft,
-                                        child: SizedBox(
-                                          width: 200,
-                                          child: Text(
-                                            incidentController
-                                                .incidents[index].types!,
-                                            style: CropifyThemes.subTextTheme,
-                                          ),
-                                        ),
-                                      ),
-                                      Align(
-                                        alignment: Alignment.bottomRight,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                              primary: const Color.fromARGB(
-                                                  255, 20, 9, 119)),
-                                          onPressed: () {
-                                            Get.toNamed("/IncidentInfo",
-                                                arguments: incidentController
-                                                    .incidents[index]);
-                                          },
-                                          child: const Text(
-                                            "Info",
                                             style:
-                                                CropifyThemes.buttonTextTheme,
+                                                CropifyThemes.mainTextTheme,
                                           ),
+                                          subtitle: Column(
+                                            children: [
+                                              Align(
+                                                  alignment:
+                                                      Alignment.bottomLeft,
+                                                  child: SizedBox(
+                                                      width: 250,
+                                                      child: Text(
+                                                        incidentController
+                                                            .incidents[index]
+                                                            .types!,
+                                                        style: CropifyThemes
+                                                            .subTextTheme,
+                                                      ))),
+                                              Align(
+                                                  alignment:
+                                                      Alignment.bottomLeft,
+                                                  child: SizedBox(
+                                                      width: 200,
+                                                      child: Text(
+                                                        incidentController
+                                                            .incidents[index]
+                                                            .date!
+                                                            .toDate()
+                                                            .toString()
+                                                            .split(" ")
+                                                            .first,
+                                                      ))),
+                                            ],
+                                          ),
+                                          // subtitle: Text('Modern Talking Album'),
                                         ),
-                                      ),
-                                    ]),
-                              ),
-                            ),
-                          );
+                                      ]),
+                                ),
+                              )));
                         } else {
                           return Container(
                             width: 0,
