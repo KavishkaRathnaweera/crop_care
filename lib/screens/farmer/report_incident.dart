@@ -262,6 +262,7 @@ class ReportIncident extends GetView<ReportIncidentController> {
                                     double.parse(acresController.text),
                                     descriptionController.text,
                                     Get.find<CameraController>().medias!);
+                                Get.back();
                               }
 
                               if (controller.isLoading.value) {

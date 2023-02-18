@@ -14,6 +14,15 @@ class CompleteIncident extends GetWidget<FarmerCompleteIncidentController> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/vegies-other.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+            height: 150,
+            width: double.infinity,
             child: const Align(
               alignment: FractionalOffset.bottomCenter,
               child: Padding(
@@ -27,15 +36,6 @@ class CompleteIncident extends GetWidget<FarmerCompleteIncidentController> {
                         fontWeight: FontWeight.bold),
                   )),
             ),
-            alignment: Alignment.center,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/vegies-other.jpg"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            height: 150,
-            width: double.infinity,
           ),
           Expanded(
             child: Column(
@@ -54,6 +54,9 @@ class CompleteIncident extends GetWidget<FarmerCompleteIncidentController> {
                                   padding: const EdgeInsets.fromLTRB(
                                       10.0, 0.0, 0, 10.0),
                                   child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ),
                                     color: Colors.yellow[50],
                                     shadowColor:
                                         const Color.fromARGB(255, 37, 87, 39),
@@ -64,81 +67,126 @@ class CompleteIncident extends GetWidget<FarmerCompleteIncidentController> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: <Widget>[
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              children: [
-                                                Text(
-                                                    controller
-                                                        .completeIncidents[
-                                                            index]
-                                                        .date!
-                                                        .toDate()
-                                                        .toString()
-                                                        .split(" ")
-                                                        .first,
-                                                    style: const TextStyle(
-                                                        fontFamily:
-                                                            "AbhayaLibre",
-                                                        fontSize: 18)),
-                                              ],
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                color: controller
+                                                    .completeIncidents[index]
+                                                    .status ==
+                                                    IncidentStatus.COMPLETED
+                                                    ? Colors.green
+                                                    : Colors.red,
+                                                borderRadius:
+                                                const BorderRadius.only(
+                                                  topLeft: Radius.circular(
+                                                      10.0), // Set the border radius for the Container
+                                                  topRight: Radius.circular(10.0),
+                                                ),
+                                              ),
+                                              width: double.infinity,
+                                              padding: EdgeInsets.all(8.0),
+                                              child: Text(
+                                                controller.completeIncidents[index]
+                                                    .status!.name
+                                                    .split("_")
+                                                    .join(" "),
+                                                style: const TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontFamily: "AbhayaLibre",
+                                                    fontSize: 25),
+                                              ),
                                             ),
+                                            SizedBox(height: 10.0),
                                             Align(
                                               alignment: Alignment.bottomLeft,
                                               child: Text(
                                                 controller
-                                                    .completeIncidents[index]
-                                                    .types!,
+                                                    .completeIncidents[index].types!,
                                                 style: const TextStyle(
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 15),
+                                                    fontFamily: "AbhayaLibre",
+                                                    fontSize: 21),
                                               ),
                                             ),
+                                            SizedBox(height: 5.0),
+                                            // Row(
+                                            //   mainAxisAlignment:
+                                            //       MainAxisAlignment.end,
+                                            //   children: [
+                                            //     Text(
+                                            //         controller
+                                            //             .completeIncidents[
+                                            //                 index]
+                                            //             .date!
+                                            //             .toDate()
+                                            //             .toString()
+                                            //             .split(" ")
+                                            //             .first,
+                                            //         style: const TextStyle(
+                                            //             fontFamily:
+                                            //                 "AbhayaLibre",
+                                            //             fontSize: 18)),
+                                            //   ],
+                                            // ),
+                                            // Align(
+                                            //   alignment: Alignment.bottomLeft,
+                                            //   child: Text(
+                                            //     controller
+                                            //         .completeIncidents[index]
+                                            //         .types!,
+                                            //     style: const TextStyle(
+                                            //         fontWeight: FontWeight.w400,
+                                            //         fontSize: 15),
+                                            //   ),
+                                            // ),
+                                            // Theme(
+                                            //   data: Theme.of(context).copyWith(
+                                            //       dividerColor:
+                                            //           Colors.transparent),
+                                            //   child: ExpansionTile(
+                                            //     initiallyExpanded: true,
+                                            //     trailing: SizedBox.shrink(),
+                                            //     tilePadding: EdgeInsets.zero,
+                                            //     title: ElevatedButton(
+                                            //       style: ElevatedButton.styleFrom(
+                                            //           primary: controller
+                                            //                       .completeIncidents[
+                                            //                           index]
+                                            //                       .status ==
+                                            //                   IncidentStatus
+                                            //                       .COMPLETED
+                                            //               ? const Color
+                                            //                       .fromARGB(255,
+                                            //                   105, 241, 105)
+                                            //               : const Color
+                                            //                       .fromARGB(221,
+                                            //                   238, 84, 38)),
+                                            //       onPressed: () {},
+                                            //       child: Text(
+                                            //         controller
+                                            //                     .completeIncidents[
+                                            //                         index]
+                                            //                     .status!
+                                            //                     .name ==
+                                            //                 "REJECTED"
+                                            //             ? controller
+                                            //                 .completeIncidents[
+                                            //                     index]
+                                            //                 .status!
+                                            //                 .name
+                                            //             : "ACCEPTED",
+                                            //         style: const TextStyle(
+                                            //             color: Colors.black,
+                                            //             fontWeight:
+                                            //                 FontWeight.w500,
+                                            //             fontFamily:
+                                            //                 "AbhayaLibre",
+                                            //             fontSize: 18),
+                                            //       ),
+                                            //     ),
                                             Theme(
                                               data: Theme.of(context).copyWith(
-                                                  dividerColor:
-                                                      Colors.transparent),
-                                              child: ExpansionTile(
-                                                initiallyExpanded: true,
-                                                trailing: SizedBox.shrink(),
-                                                tilePadding: EdgeInsets.zero,
-                                                title: ElevatedButton(
-                                                  style: ElevatedButton.styleFrom(
-                                                      primary: controller
-                                                                  .completeIncidents[
-                                                                      index]
-                                                                  .status ==
-                                                              IncidentStatus
-                                                                  .COMPLETED
-                                                          ? const Color
-                                                                  .fromARGB(255,
-                                                              105, 241, 105)
-                                                          : const Color
-                                                                  .fromARGB(221,
-                                                              238, 84, 38)),
-                                                  onPressed: () {},
-                                                  child: Text(
-                                                    controller
-                                                                .completeIncidents[
-                                                                    index]
-                                                                .status!
-                                                                .name ==
-                                                            "REJECTED"
-                                                        ? controller
-                                                            .completeIncidents[
-                                                                index]
-                                                            .status!
-                                                            .name
-                                                        : "ACCEPTED",
-                                                    style: const TextStyle(
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontFamily:
-                                                            "AbhayaLibre",
-                                                        fontSize: 18),
-                                                  ),
-                                                ),
+                                                  dividerColor: Colors.transparent),
+                                              child: Column(
                                                 children: [
                                                   if (controller
                                                           .completeIncidents[
