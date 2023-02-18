@@ -480,7 +480,7 @@ class IncidentInfo extends GetWidget<IncidentController> {
                   onPressed: () {
                     incidentController.setStatus(incident.id!,
                         IncidentStatus.REJECTED, commentController.text, 0.0);
-                    Get.offAllNamed("/OfficerHomeRoot");
+                    Get.back();
                   },
                   style: ElevatedButton.styleFrom(primary: Colors.red),
                   child: const Text(
@@ -566,15 +566,17 @@ class IncidentInfo extends GetWidget<IncidentController> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    incidentController.startPaymentOption(
-                        incident.id!,
-                        incident.user!.name!,
-                        incident.user!.accountNum!,
-                        incident.user!.bankName!,
-                        commentController.text,
-                        double.parse(amoountContorller.text),
-                        incident.user!.address!,
-                        incident.user!.fcmToken!);
+                    // incidentController.startPaymentOption(
+                    //     incident.id!,
+                    //     incident.user!.name!,
+                    //     incident.user!.accountNum!,
+                    //     incident.user!.bankName!,
+                    //     commentController.text,
+                    //     double.parse(amoountContorller.text),
+                    //     incident.user!.address!,
+                    //     incident.user!.fcmToken!);
+                    incidentController.setStatus(
+                        incident.id!, IncidentStatus.COMPLETED, commentController.text, double.parse(amoountContorller.text));
                     Get.back();
                   },
                   style: ElevatedButton.styleFrom(primary: Colors.red),

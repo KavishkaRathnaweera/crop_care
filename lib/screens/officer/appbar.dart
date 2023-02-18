@@ -15,23 +15,24 @@ class OfficerAppBar extends GetWidget<AuthController>
   @override
   Widget build(BuildContext context) {
     return AppBar(
+        centerTitle: true,
         title: const Padding(
           padding: EdgeInsets.fromLTRB(16, 0, 0, 0),
           child: Text(
             'CropCare',
             style: TextStyle(
-                color: Colors.black,
+                color: Colors.white,
                 fontWeight: FontWeight.w100,
                 fontSize: 25,
                 fontFamily: "Lobster",
                 ),
           ),
         ),
-        backgroundColor: const Color.fromARGB(214, 254,194,1),
+        backgroundColor: const Color.fromARGB(214, 96, 5, 199),
         actions: visible
             ? [
                 PopupMenuButton(
-                    icon: const Icon(Icons.menu,color: Colors.black,),
+                    icon: const Icon(Icons.menu,color: Colors.white70,),
                     color: Colors.white,
                     itemBuilder: (context) => [
                           PopupMenuItem(
