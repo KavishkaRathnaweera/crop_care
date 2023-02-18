@@ -97,7 +97,7 @@ class AuthController extends GetxController {
 
         url = await (await uploadTask).ref.getDownloadURL();
       } else {
-        url = "https://urlty.co/Zcs";
+        url = "gs://cropcare-app.appspot.com/profile_pic/gff.jpg";
       }
 
       //create user in database
