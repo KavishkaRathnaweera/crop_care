@@ -29,6 +29,7 @@ class FarmerAccount extends GetWidget<UserController> {
             Padding(
               padding: const EdgeInsets.fromLTRB(5.0, 0, 0, 5.0),
               child: Card(
+                color: Colors.yellow[50],
                 shadowColor: const Color.fromARGB(255, 2, 105, 48),
                 elevation: 5,
                 child: Padding(
@@ -145,6 +146,7 @@ class FarmerAccount extends GetWidget<UserController> {
             Padding(
               padding: const EdgeInsets.fromLTRB(5.0, 0, 0, 5.0),
               child: Card(
+                color: Colors.yellow[50],
                 shadowColor: const Color.fromARGB(255, 2, 105, 48),
                 elevation: 5,
                 child: Padding(
@@ -239,6 +241,7 @@ class FarmerAccount extends GetWidget<UserController> {
             Padding(
               padding: const EdgeInsets.fromLTRB(5.0, 0, 0, 5.0),
               child: Card(
+                color: Colors.yellow[50],
                 shadowColor: const Color.fromARGB(255, 2, 105, 48),
                 elevation: 5,
                 child: Padding(

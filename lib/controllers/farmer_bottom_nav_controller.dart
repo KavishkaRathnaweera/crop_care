@@ -10,7 +10,7 @@ import '../screens/farmer/home.dart';
 import '../screens/farmer/incident_log.dart';
 
 class FarmerBottomNavController extends GetxController {
-  var currentIndex = 0.obs;
+  var currentIndex = 2.obs;
 
   final pages = <String>[
     'farmerIncidentLog',
