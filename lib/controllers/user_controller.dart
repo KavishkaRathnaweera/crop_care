@@ -71,7 +71,7 @@ class UserController extends GetxController {
     try {
       List<RegisteredFarmModel> registered =
           await Database().isFarmRegistered(regNum);
-      if (!registered.isEmpty) {
+      if (registered.isEmpty) {
         Get.snackbar("Error registering account",
             "Provided farm registration number is not government registered",
             snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
