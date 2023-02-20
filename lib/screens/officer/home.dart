@@ -19,7 +19,7 @@ class OfficerHome extends StatelessWidget {
             alignment: Alignment.center,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/officer-home.png"),
+                image: AssetImage("assets/officer-home.jpg"),
                 fit: BoxFit.cover,
               ),
             ),
