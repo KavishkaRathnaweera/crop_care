@@ -18,6 +18,7 @@ class IncidentModel {
   num? amount;
   String? comment;
   String? location;
+  String? distance;
 
   IncidentModel(
       {this.id,
@@ -33,7 +34,8 @@ class IncidentModel {
       this.rejectDate,
       this.amount,
       this.comment,
-      this.location
+      this.location,
+      this.distance
       });
 
   IncidentModel.fromDocumentSnapshot(
@@ -53,6 +55,7 @@ class IncidentModel {
     amount = documentSnapshot["amount"];
     comment = documentSnapshot["comment"];
     location = documentSnapshot["location"];
+    distance = documentSnapshot["distance"];
   }
 }
 

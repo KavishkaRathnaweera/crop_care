@@ -40,6 +40,7 @@ class UserController extends GetxController {
       String accountNum, String farmName, String address, String regNum) async {
     isLoading.value = true;
     try {
+
       BankModel _bank =
           BankModel(name: bankName.trim(), accountNum: accountNum.trim());
       FarmModel _farm = FarmModel(
@@ -76,14 +77,13 @@ class UserController extends GetxController {
             snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
       } else {
         _registeredFarm.value = registered[0];
-        return true;
-        // if (_registeredFarm.value.registered!) {
-        //   Get.snackbar(
-        //       "Error registering account", "Farm is already registered",
-        //       snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
-        // } else {
-        //   return true;
-        // }
+        if (_registeredFarm.value.registered!) {
+          Get.snackbar(
+              "Error registering account", "Farm is already registered",
+              snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
+        } else {
+          return true;
+        }
       }
     } on FirebaseException catch (e) {
       Get.snackbar(

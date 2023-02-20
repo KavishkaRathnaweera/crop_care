@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 
 import '../models/media.dart';
+import '../models/registered_farm.dart';
 import '../models/user.dart';
 import '../services/LocationServices.dart';
 import '../services/database.dart';
@@ -91,7 +92,16 @@ class ReportIncidentController extends GetxController {
       try {
 
         var locCoordinates = await LocationService.getCurrentPosition();
-        String loc = "Log:${locCoordinates.longitude} Lat:${locCoordinates.latitude}";
+        String loc = "${locCoordinates.longitude} ${locCoordinates.latitude}";
+
+        String? regNum = user.farm?.regNum;
+
+        List<RegisteredFarmModel> registered = await Database().isFarmRegistered(regNum!);
+        RegisteredFarmModel farm = registered[0];
+        List<String>? farm_coor = farm.coordinates?.split(" ");
+        double distanceM = LocationService.getDistance(locCoordinates.latitude,
+            locCoordinates.longitude, double.parse(farm_coor![0]), double.parse(farm_coor![1]));
+
 
         IncidentModel _incident = IncidentModel(
             types: cropTypes.join(', '),
@@ -106,7 +116,8 @@ class ReportIncidentController extends GetxController {
             completeDate: null,
             amount: null,
             comment: null,
-            location: loc
+            location: loc,
+            distance: distanceM.toString()
         );
 
         if (await Database().createIncident(_incident)) {

@@ -175,6 +175,22 @@ class IncidentInfo extends GetWidget<IncidentController> {
                       height: 20,
                     ),
                     Row(
+                      children: [
+                        SizedBox(
+                          width: labelWidth,
+                          child: const Text(
+                            "Distance Difference :",
+                            style: CropifyThemes.subTextTheme,
+                          ),
+                        ),
+                        Text(incident.distance.toString(),
+                            style: CropifyThemes.mainTextTheme),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
