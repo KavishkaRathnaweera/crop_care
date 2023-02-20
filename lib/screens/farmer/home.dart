@@ -52,7 +52,60 @@ class FarmerHome extends StatelessWidget {
                   ),
                   const SizedBox(
                     height: 30,
-                  ),
+                  )
+                  ,
+                  Card(
+                    elevation: 4, // Add some elevation to the card to make it stand out
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    color: Colors.yellow[50],
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            "INSTRUCTIONS FOR REPORTING INCIDENT",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                "1. Select your crop type. You can select multiple crops.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "2. Add the area that was damaged by the incident.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "3. Clearly describe the incident.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "4. Upload at least 3 photos of the damaged crop.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                "5. Report the incident near the crop.",
+                                style: TextStyle(fontSize: 16),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
 
                 ],
               ),
