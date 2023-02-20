@@ -5,7 +5,9 @@ import '../../controllers/incident_log_controller.dart';
 import '../../models/incident_status.dart';
 
 class IncidentLog extends GetWidget<IncidentLogController> {
-  const IncidentLog({Key? key}) : super(key: key);
+   IncidentLog({Key? key}) : super(key: key);
+
+  IncidentLogController incidentLogController = Get.find<IncidentLogController>();
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +45,12 @@ class IncidentLog extends GetWidget<IncidentLogController> {
               children: [
                 Obx(
                   () {
-                    if ((controller.newIncidents.isNotEmpty)) {
+                    if ((incidentLogController.newIncidents.isNotEmpty)) {
                       return Expanded(
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(8, 15, 8, 8),
                           child: ListView.builder(
-                              itemCount: controller.newIncidents.length,
+                              itemCount: incidentLogController.newIncidents.length,
                               itemBuilder: (BuildContext context, int index) {
                                 return Padding(
                                   padding: const EdgeInsets.fromLTRB(
@@ -66,7 +68,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                       child: Column(children: <Widget>[
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: controller
+                                            color: incidentLogController
                                                         .newIncidents[index]
                                                         .status ==
                                                     IncidentStatus.NEW
@@ -82,7 +84,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                           width: double.infinity,
                                           padding: EdgeInsets.all(8.0),
                                           child: Text(
-                                            controller.newIncidents[index]
+                                            incidentLogController.newIncidents[index]
                                                 .status!.name
                                                 .split("_")
                                                 .join(" "),
@@ -97,7 +99,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                         Align(
                                           alignment: Alignment.bottomLeft,
                                           child: Text(
-                                            controller
+                                            incidentLogController
                                                 .newIncidents[index].types!,
                                             style: const TextStyle(
                                                 fontFamily: "AbhayaLibre",
@@ -127,7 +129,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                                 child: Align(
                                                   alignment: Alignment.topRight,
                                                   child: Text(
-                                                      controller
+                                                      incidentLogController
                                                           .newIncidents[index]
                                                           .date!
                                                           .toDate()
@@ -166,7 +168,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                               dividerColor: Colors.transparent),
                                           child: Column(
                                             children: [
-                                              if (controller.newIncidents[index]
+                                              if (incidentLogController.newIncidents[index]
                                                       .reviewDate !=
                                                   null) ...[
                                                 Padding(
@@ -193,7 +195,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                                             alignment: Alignment
                                                                 .topRight,
                                                             child: Text(
-                                                              controller
+                                                              incidentLogController
                                                                   .newIncidents[
                                                                       index]
                                                                   .reviewDate!
@@ -234,7 +236,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                                         alignment:
                                                             Alignment.topRight,
                                                         child: Text(
-                                                            controller
+                                                            incidentLogController
                                                                 .newIncidents[
                                                                     index]
                                                                 .description!,
@@ -277,7 +279,7 @@ class IncidentLog extends GetWidget<IncidentLogController> {
                                                       child: Align(
                                                         alignment:
                                                             Alignment.topRight,
-                                                        child: Text(controller
+                                                        child: Text(incidentLogController
                                                             .newIncidents[index]
                                                             .acres!
                                                             .toString()),

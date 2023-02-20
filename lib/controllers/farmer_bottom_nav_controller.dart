@@ -36,7 +36,7 @@ class FarmerBottomNavController extends GetxController {
     if (settings.name == 'farmerIncidentLog') {
       return GetPageRoute(
           settings: settings,
-          page: () => const IncidentLog(),
+          page: () =>  IncidentLog(),
           binding: IncidentLogBinding(),
           transition: Transition.noTransition);
     }

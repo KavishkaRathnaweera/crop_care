@@ -110,6 +110,7 @@ class ReportIncidentController extends GetxController {
               snackPosition: SnackPosition.BOTTOM,
               backgroundColor: Colors.green);
         }
+        Get.offAllNamed("/farmerIncidentLog");
       } catch (_) {
         isLoading.value = false;
         Get.snackbar("Sorry", "Something went wrong",
