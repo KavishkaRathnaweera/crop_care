@@ -17,6 +17,7 @@ class IncidentModel {
   Timestamp? rejectDate;
   num? amount;
   String? comment;
+  String? location;
 
   IncidentModel(
       {this.id,
@@ -31,7 +32,9 @@ class IncidentModel {
       this.completeDate,
       this.rejectDate,
       this.amount,
-      this.comment});
+      this.comment,
+      this.location
+      });
 
   IncidentModel.fromDocumentSnapshot(
       {required this.id, required Map<String, dynamic> documentSnapshot}) {
@@ -49,6 +52,7 @@ class IncidentModel {
     rejectDate = documentSnapshot["rejectDate"];
     amount = documentSnapshot["amount"];
     comment = documentSnapshot["comment"];
+    location = documentSnapshot["location"];
   }
 }
 

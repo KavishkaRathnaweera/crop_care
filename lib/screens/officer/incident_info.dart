@@ -32,7 +32,7 @@ class IncidentInfo extends GetWidget<IncidentController> {
                 height: 30,
               ),
               const Text(
-                "Incident Info",
+                "Incident Details",
                 style: CropifyThemes.titleTextTheme,
               ),
               Padding(
@@ -152,6 +152,22 @@ class IncidentInfo extends GetWidget<IncidentController> {
                           ),
                         ),
                         Text(incident.acres.toString(),
+                            style: CropifyThemes.mainTextTheme),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: labelWidth,
+                          child: const Text(
+                            "Location coordinates :",
+                            style: CropifyThemes.subTextTheme,
+                          ),
+                        ),
+                        Text(incident.location.toString(),
                             style: CropifyThemes.mainTextTheme),
                       ],
                     ),

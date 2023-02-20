@@ -11,6 +11,7 @@ import 'package:path/path.dart';
 
 import '../models/media.dart';
 import '../models/user.dart';
+import '../services/LocationServices.dart';
 import '../services/database.dart';
 
 class ReportIncidentController extends GetxController {
@@ -88,6 +89,10 @@ class ReportIncidentController extends GetxController {
       }
 
       try {
+
+        var locCoordinates = await LocationService.getCurrentPosition();
+        String loc = "Log:${locCoordinates.longitude} Lat:${locCoordinates.latitude}";
+
         IncidentModel _incident = IncidentModel(
             types: cropTypes.join(', '),
             description: description.trim(),
@@ -100,7 +105,9 @@ class ReportIncidentController extends GetxController {
             rejectDate: null,
             completeDate: null,
             amount: null,
-            comment: null);
+            comment: null,
+            location: loc
+        );
 
         if (await Database().createIncident(_incident)) {
           isLoading.value = false;
@@ -113,7 +120,7 @@ class ReportIncidentController extends GetxController {
         Get.offAllNamed("/farmerIncidentLog");
       } catch (_) {
         isLoading.value = false;
-        Get.snackbar("Sorry", "Something went wrong",
+        Get.snackbar("Sorry", "Something went wrong. Check your phone location service",
             snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
       }
     } else {

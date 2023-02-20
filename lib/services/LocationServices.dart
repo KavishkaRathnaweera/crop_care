@@ -65,7 +65,7 @@ class LocationService implements Exception {
       await LocationService.getPosition("Current");
       return initLocation;
     } catch (e) {
-      print('location not work');
+      print(e);
     }
   }
 

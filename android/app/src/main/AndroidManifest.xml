@@ -2,6 +2,11 @@
     package="com.example.cropcare"
     xmlns:tools="http://schemas.android.com/tools"
     >
+
+    <!-- Always include this permission -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
    <application
        tools:replace="android:label"
         android:label="cropcare"

@@ -226,7 +226,8 @@ class Database {
         "rejectDate": incident.rejectDate,
         "completeDate": incident.completeDate,
         "comment": incident.comment,
-        "amount": incident.amount
+        "amount": incident.amount,
+        "location":incident.location
       });
       return true;
     } catch (e) {
