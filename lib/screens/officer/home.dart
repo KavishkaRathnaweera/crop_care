@@ -75,7 +75,7 @@ class OfficerHome extends StatelessWidget {
                                                     .user!
                                                     .name!,
                                                 style:
-                                                    CropifyThemes.mainTextTheme,
+                                                    CropCareThemes.mainTextTheme,
                                               ),
                                               subtitle: Column(
                                                 children: [
@@ -89,7 +89,7 @@ class OfficerHome extends StatelessWidget {
                                                                 .incidents[
                                                                     index]
                                                                 .types!,
-                                                            style: CropifyThemes
+                                                            style: CropCareThemes
                                                                 .subTextTheme,
                                                           ))),
                                                   Align(

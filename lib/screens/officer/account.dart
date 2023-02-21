@@ -43,7 +43,7 @@ class OfficerAccount extends StatelessWidget {
               ),
               const Text(
                 "Complete Profile",
-                style: CropifyThemes.titleTextTheme,
+                style: CropCareThemes.titleTextTheme,
               ),
               const SizedBox(
                 height: 25,
@@ -83,12 +83,12 @@ class OfficerAccount extends StatelessWidget {
                         },
                         child: const Text(
                           "Cancel",
-                          style: CropifyThemes.buttonTextTheme,
+                          style: CropCareThemes.buttonTextTheme,
                         )),
                     ElevatedButton(
                       child: const Text(
                         "Submit",
-                        style: CropifyThemes.buttonTextTheme,
+                        style: CropCareThemes.buttonTextTheme,
                       ),
                       style: ElevatedButton.styleFrom(primary: Colors.green),
                       onPressed: () {

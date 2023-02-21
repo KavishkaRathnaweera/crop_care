@@ -94,7 +94,7 @@ class CompleteTasks extends StatelessWidget {
                                           Text(
                                               incidentController
                                                   .incidents[index].user!.name!,
-                                              style: CropifyThemes.mainTextTheme
+                                              style: CropCareThemes.mainTextTheme
                                           ),
                                         ],
                                       ),
@@ -115,7 +115,7 @@ class CompleteTasks extends StatelessWidget {
                                                 .toString()
                                                 .split(" ")
                                                 .first,
-                                            style: CropifyThemes.subTextTheme,
+                                            style: CropCareThemes.subTextTheme,
                                           ),
                                         ],
                                       ),
@@ -132,7 +132,7 @@ class CompleteTasks extends StatelessWidget {
                                           Text(
                                             incidentController
                                                 .incidents[index].acres!.toString(),
-                                            style: CropifyThemes.subTextTheme,
+                                            style: CropCareThemes.subTextTheme,
                                           ),
                                         ],
                                       ),
@@ -181,7 +181,7 @@ class CompleteTasks extends StatelessWidget {
                                           child: const Text(
                                             "Check Details",
                                             style:
-                                                CropifyThemes.buttonTextTheme,
+                                                CropCareThemes.buttonTextTheme,
                                           ),
                                         ),
                                       ),

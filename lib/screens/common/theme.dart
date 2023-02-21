@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CropifyThemes {
+class CropCareThemes {
   static final light = ThemeData.light().copyWith(
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(

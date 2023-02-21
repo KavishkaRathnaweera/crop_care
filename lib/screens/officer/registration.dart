@@ -35,7 +35,7 @@ class OfficerRegistration extends StatelessWidget {
             ),
             const Text(
               "Complete Profile",
-              style: CropifyThemes.titleTextTheme,
+              style: CropCareThemes.titleTextTheme,
             ),
             const SizedBox(
               height: 25,

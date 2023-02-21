@@ -92,7 +92,7 @@ class InprogressTasks extends StatelessWidget {
                                           Text(
                                               incidentController
                                                   .incidents[index].user!.name!,
-                                              style: CropifyThemes.mainTextTheme
+                                              style: CropCareThemes.mainTextTheme
                                           ),
                                         ],
                                       ),
@@ -113,7 +113,7 @@ class InprogressTasks extends StatelessWidget {
                                                 .toString()
                                                 .split(" ")
                                                 .first,
-                                            style: CropifyThemes.subTextTheme,
+                                            style: CropCareThemes.subTextTheme,
                                           ),
                                         ],
                                       ),
@@ -130,7 +130,7 @@ class InprogressTasks extends StatelessWidget {
                                           Text(
                                             incidentController
                                                 .incidents[index].acres!.toString(),
-                                            style: CropifyThemes.subTextTheme,
+                                            style: CropCareThemes.subTextTheme,
                                           ),
                                         ],
                                       ),
@@ -149,7 +149,7 @@ class InprogressTasks extends StatelessWidget {
                                           child: const Text(
                                             "Check Details",
                                             style:
-                                                CropifyThemes.buttonTextTheme,
+                                                CropCareThemes.buttonTextTheme,
                                           ),
                                         ),
                                       ),

@@ -17,7 +17,7 @@ class CropCareApp extends StatelessWidget {
       title: "CropCare",
       debugShowCheckedModeBanner: false,
       initialBinding: AuthBinding(),
-      theme: CropifyThemes.light,
+      theme: CropCareThemes.light,
       initialRoute: "/",
       getPages: GetPages.init(),
       defaultTransition: Transition.zoom,
