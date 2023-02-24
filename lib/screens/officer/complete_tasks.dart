@@ -136,37 +136,6 @@ class CompleteTasks extends StatelessWidget {
                                           ),
                                         ],
                                       ),
-                                      // Row(
-                                      //   mainAxisAlignment:
-                                      //       MainAxisAlignment.spaceBetween,
-                                      //   children: [
-                                      //     Text(
-                                      //       incidentController
-                                      //           .incidents[index].user!.name!,
-                                      //       style: CropifyThemes.mainTextTheme,
-                                      //     ),
-                                      //     Text(
-                                      //       incidentController
-                                      //           .incidents[index].date!
-                                      //           .toDate()
-                                      //           .toString()
-                                      //           .split(" ")
-                                      //           .first,
-                                      //       style: CropifyThemes.subTextTheme,
-                                      //     ),
-                                      //   ],
-                                      // ),
-                                      // Align(
-                                      //   alignment: Alignment.bottomLeft,
-                                      //   child: SizedBox(
-                                      //     width: 200,
-                                      //     child: Text(
-                                      //       incidentController
-                                      //           .incidents[index].types!,
-                                      //       style: CropifyThemes.subTextTheme,
-                                      //     ),
-                                      //   ),
-                                      // ),
                                       Align(
                                         alignment: Alignment.center,
                                         child: ElevatedButton(

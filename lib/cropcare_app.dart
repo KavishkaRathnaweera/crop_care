@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'controllers/bindings/auth_binding.dart';
 
 class CropCareApp extends StatelessWidget {
-  // const CropifyApp({Key? key}) : super(key: key) ;
   CropCareApp() {
     PushNotificationService().initialise();
   }
